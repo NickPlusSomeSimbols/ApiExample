@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RepetitionInfrastructure;
 
@@ -10,9 +11,11 @@ using RepetitionInfrastructure;
 namespace RepetitionInfrastructure.Migrations
 {
     [DbContext(typeof(RepetitionDbContext))]
-    partial class RepetitionDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231201111321_StoreStorageModelsAdded")]
+    partial class StoreStorageModelsAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -92,11 +95,13 @@ namespace RepetitionInfrastructure.Migrations
 
                     b.Property<string>("BookStoreId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("BookId");
+
+                    b.HasIndex("BookStoreId");
 
                     b.ToTable("BookStorages");
                 });
@@ -106,18 +111,11 @@ namespace RepetitionInfrastructure.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("BookStorageId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("StoreName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("BookStorageId")
-                        .IsUnique();
 
                     b.ToTable("BookStores");
                 });
@@ -145,24 +143,15 @@ namespace RepetitionInfrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Book");
-                });
-
-            modelBuilder.Entity("RepetitionCore.Models.BookStore", b =>
-                {
-                    b.HasOne("RepetitionCore.Models.BookStorage", "BookStorage")
-                        .WithOne("BookStore")
-                        .HasForeignKey("RepetitionCore.Models.BookStore", "BookStorageId")
+                    b.HasOne("RepetitionCore.Models.BookStore", "BookStore")
+                        .WithMany()
+                        .HasForeignKey("BookStoreId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("BookStorage");
-                });
+                    b.Navigation("Book");
 
-            modelBuilder.Entity("RepetitionCore.Models.BookStorage", b =>
-                {
-                    b.Navigation("BookStore")
-                        .IsRequired();
+                    b.Navigation("BookStore");
                 });
 #pragma warning restore 612, 618
         }
