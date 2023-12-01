@@ -1,0 +1,17 @@
+C:\Users\mika\source\repos\Repetition\RepetitionInfrastructure\bin\Debug\net6.0\RepetitionInfrastructure.deps.json
+C:\Users\mika\source\repos\Repetition\RepetitionInfrastructure\bin\Debug\net6.0\RepetitionInfrastructure.runtimeconfig.json
+C:\Users\mika\source\repos\Repetition\RepetitionInfrastructure\bin\Debug\net6.0\RepetitionInfrastructure.dll
+C:\Users\mika\source\repos\Repetition\RepetitionInfrastructure\bin\Debug\net6.0\RepetitionInfrastructure.pdb
+C:\Users\mika\source\repos\Repetition\RepetitionInfrastructure\bin\Debug\net6.0\RepetitionCore.dll
+C:\Users\mika\source\repos\Repetition\RepetitionInfrastructure\bin\Debug\net6.0\RepetitionCore.pdb
+C:\Users\mika\source\repos\Repetition\RepetitionInfrastructure\obj\Debug\net6.0\RepetitionInfrastructure.csproj.AssemblyReference.cache
+C:\Users\mika\source\repos\Repetition\RepetitionInfrastructure\obj\Debug\net6.0\RepetitionInfrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mika\source\repos\Repetition\RepetitionInfrastructure\obj\Debug\net6.0\RepetitionInfrastructure.AssemblyInfoInputs.cache
+C:\Users\mika\source\repos\Repetition\RepetitionInfrastructure\obj\Debug\net6.0\RepetitionInfrastructure.AssemblyInfo.cs
+C:\Users\mika\source\repos\Repetition\RepetitionInfrastructure\obj\Debug\net6.0\RepetitionInfrastructure.csproj.CoreCompileInputs.cache
+C:\Users\mika\source\repos\Repetition\RepetitionInfrastructure\obj\Debug\net6.0\RepetitionInfrastructure.csproj.CopyComplete
+C:\Users\mika\source\repos\Repetition\RepetitionInfrastructure\obj\Debug\net6.0\RepetitionInfrastructure.dll
+C:\Users\mika\source\repos\Repetition\RepetitionInfrastructure\obj\Debug\net6.0\refint\RepetitionInfrastructure.dll
+C:\Users\mika\source\repos\Repetition\RepetitionInfrastructure\obj\Debug\net6.0\RepetitionInfrastructure.pdb
+C:\Users\mika\source\repos\Repetition\RepetitionInfrastructure\obj\Debug\net6.0\RepetitionInfrastructure.genruntimeconfig.cache
+C:\Users\mika\source\repos\Repetition\RepetitionInfrastructure\obj\Debug\net6.0\ref\RepetitionInfrastructure.dll
