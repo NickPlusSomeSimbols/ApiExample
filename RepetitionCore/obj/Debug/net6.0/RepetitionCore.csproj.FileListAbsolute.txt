@@ -1,0 +1,12 @@
+C:\Users\mika\source\repos\Repetition\RepetitionCore\bin\Debug\net6.0\RepetitionCore.deps.json
+C:\Users\mika\source\repos\Repetition\RepetitionCore\bin\Debug\net6.0\RepetitionCore.dll
+C:\Users\mika\source\repos\Repetition\RepetitionCore\bin\Debug\net6.0\RepetitionCore.pdb
+C:\Users\mika\source\repos\Repetition\RepetitionCore\obj\Debug\net6.0\RepetitionCore.csproj.AssemblyReference.cache
+C:\Users\mika\source\repos\Repetition\RepetitionCore\obj\Debug\net6.0\RepetitionCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mika\source\repos\Repetition\RepetitionCore\obj\Debug\net6.0\RepetitionCore.AssemblyInfoInputs.cache
+C:\Users\mika\source\repos\Repetition\RepetitionCore\obj\Debug\net6.0\RepetitionCore.AssemblyInfo.cs
+C:\Users\mika\source\repos\Repetition\RepetitionCore\obj\Debug\net6.0\RepetitionCore.csproj.CoreCompileInputs.cache
+C:\Users\mika\source\repos\Repetition\RepetitionCore\obj\Debug\net6.0\RepetitionCore.dll
+C:\Users\mika\source\repos\Repetition\RepetitionCore\obj\Debug\net6.0\refint\RepetitionCore.dll
+C:\Users\mika\source\repos\Repetition\RepetitionCore\obj\Debug\net6.0\RepetitionCore.pdb
+C:\Users\mika\source\repos\Repetition\RepetitionCore\obj\Debug\net6.0\ref\RepetitionCore.dll

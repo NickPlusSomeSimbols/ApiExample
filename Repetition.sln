@@ -5,6 +5,10 @@ VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repetition", "Repetition\Repetition.csproj", "{A374ED9E-1916-4868-AF05-EF4E442B2F51}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepetitionCore", "RepetitionCore\RepetitionCore.csproj", "{E8CEF5A4-1833-44BD-BE74-EFA0AC447E06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepetitionInfrastructure", "RepetitionInfrastructure\RepetitionInfrastructure.csproj", "{BF43DC27-5B53-4E8A-A61E-ECF1A951895E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{A374ED9E-1916-4868-AF05-EF4E442B2F51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A374ED9E-1916-4868-AF05-EF4E442B2F51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A374ED9E-1916-4868-AF05-EF4E442B2F51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8CEF5A4-1833-44BD-BE74-EFA0AC447E06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8CEF5A4-1833-44BD-BE74-EFA0AC447E06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8CEF5A4-1833-44BD-BE74-EFA0AC447E06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8CEF5A4-1833-44BD-BE74-EFA0AC447E06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF43DC27-5B53-4E8A-A61E-ECF1A951895E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF43DC27-5B53-4E8A-A61E-ECF1A951895E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF43DC27-5B53-4E8A-A61E-ECF1A951895E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF43DC27-5B53-4E8A-A61E-ECF1A951895E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
