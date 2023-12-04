@@ -1,6 +1,7 @@
-﻿using RepetitionCore.Dto.Author;
+﻿using Microsoft.EntityFrameworkCore;
+using RepetitionCore.Dto.Author;
 using RepetitionCore.Models;
-using RepetitionCore.Services;
+using RepetitionInfrastructure.ServiceInterfaces;
 
 namespace RepetitionInfrastructure.Services
 {
@@ -12,7 +13,7 @@ namespace RepetitionInfrastructure.Services
         {
             _dbContext = dbContext;
         }
-        public async Task<Author> GetAuthorAsync(int id)
+        public Author GetAuthor(int id)
         {
             var author = _dbContext.Authors.FirstOrDefault(i => i.Id == id);
 
@@ -42,7 +43,7 @@ namespace RepetitionInfrastructure.Services
         }
         public async Task<Author> UpdateAuthorAsync(AuthorDtoUpdate authorDtoUpdate)
         {
-            Author author = _dbContext.Authors.FirstOrDefault(i => i.Id == authorDtoUpdate.Id);
+            var author = _dbContext.Authors.FirstOrDefault(i => i.Id == authorDtoUpdate.Id);
 
             if (author == null)
             {
@@ -50,8 +51,8 @@ namespace RepetitionInfrastructure.Services
             }
 
             author.Name = string.IsNullOrEmpty(authorDtoUpdate.Name) || author.Name == authorDtoUpdate.Name ? author.Name : authorDtoUpdate.Name;
-            author.BirthDate = string.IsNullOrEmpty(authorDtoUpdate.BirthDate) || author.BirthDate == authorDtoUpdate.BirthDate ? author.BirthDate : authorDtoUpdate.BirthDate;
-            author.DeathDate = string.IsNullOrEmpty(authorDtoUpdate.DeathDate) || author.DeathDate == authorDtoUpdate.DeathDate ? author.DeathDate : authorDtoUpdate.DeathDate;
+            author.BirthDate = string.IsNullOrEmpty(authorDtoUpdate.BirthDate) || authorDtoUpdate.BirthDate == "string" ? author.BirthDate : authorDtoUpdate.BirthDate;
+            author.DeathDate = string.IsNullOrEmpty(authorDtoUpdate.DeathDate) || authorDtoUpdate.DeathDate == "string" ? author.DeathDate : authorDtoUpdate.DeathDate;
 
             await _dbContext.SaveChangesAsync();
 

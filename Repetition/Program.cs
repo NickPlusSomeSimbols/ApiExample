@@ -1,8 +1,8 @@
 using RepetitionInfrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using RepetitionCore.Services;
 using RepetitionInfrastructure.Services;
+using RepetitionInfrastructure.ServiceInterfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +13,7 @@ builder.Services.AddDbContext<RepetitionDbContext>(options =>
 
 builder.Services.AddScoped<IAuthorService, AuthorService>();
 builder.Services.AddScoped<IBookService, BookService>();
+builder.Services.AddScoped<IAuthorBookService, AuthorBookService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

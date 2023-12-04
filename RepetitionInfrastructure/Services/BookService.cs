@@ -1,6 +1,6 @@
 ﻿using RepetitionCore.Dto.Book;
 using RepetitionCore.Models;
-using RepetitionCore.Services;
+using RepetitionInfrastructure.ServiceInterfaces;
 
 namespace RepetitionInfrastructure.Services
 {
@@ -13,7 +13,7 @@ namespace RepetitionInfrastructure.Services
         {
             _dbContext = dbContext;
         }
-        public async Task<Book> GetBookAsync(int id)
+        public Book GetBookAsync(int id)
         {
             var book = _dbContext.Books.FirstOrDefault(i => i.Id == id);
 
@@ -42,16 +42,16 @@ namespace RepetitionInfrastructure.Services
         }
         public async Task<Book> UpdateBookAsync(BookDtoUpdate bookDtoUpdate)
         {
-            Book book = _dbContext.Books.FirstOrDefault(i => i.Id == bookDtoUpdate.Id);
+            var book = _dbContext.Books.FirstOrDefault(i => i.Id == bookDtoUpdate.Id);
 
             if (book == null)
             {
                 throw new Exception("ItemNotFound");
             }
 
-            book.Title = string.IsNullOrEmpty(bookDtoUpdate.Title) ? book.Title : bookDtoUpdate.Title;
-            book.Description = string.IsNullOrEmpty(bookDtoUpdate.Description) ? book.Description : bookDtoUpdate.Description;
-            book.PublicationDate = string.IsNullOrEmpty(bookDtoUpdate.PublicationDate) ? book.PublicationDate : bookDtoUpdate.PublicationDate;
+            book.Title = string.IsNullOrEmpty(bookDtoUpdate.Title) || bookDtoUpdate.Title == "string" ? book.Title : bookDtoUpdate.Title;
+            book.Description = string.IsNullOrEmpty(bookDtoUpdate.Description) || bookDtoUpdate.Description == "string" ? book.Description : bookDtoUpdate.Description;
+            book.PublicationDate = string.IsNullOrEmpty(bookDtoUpdate.PublicationDate) || bookDtoUpdate.PublicationDate == "string" ? book.PublicationDate : bookDtoUpdate.PublicationDate;
 
             await _dbContext.SaveChangesAsync();
 

@@ -2,8 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Repetition.Abstractions;
 using RepetitionCore.Dto.Book;
 using RepetitionCore.Models;
-using RepetitionCore.Services;
-using RepetitionInfrastructure.Services;
+using RepetitionInfrastructure.ServiceInterfaces;
 
 namespace Repetition.Controllers
 {
@@ -15,9 +14,9 @@ namespace Repetition.Controllers
             _bookService = bookService;
         }
         [HttpGet("Get-Book")]
-        public async Task<Book> GetBookAsync(int id)
+        public Book GetBookAsync(int id)
         {
-            return await _bookService.GetBookAsync(id);
+            return _bookService.GetBookAsync(id);
         }
         [HttpPost("Add-Book")]
         public async Task<Book> CreateBookAsync(BookDto bookDto)

@@ -9,6 +9,7 @@ namespace RepetitionInfrastructure
         public DbSet<Author> Authors { get; set; }
         public DbSet<BookStore> BookStores { get; set; }
         public DbSet<BookStorage> BookStorages { get; set; }
+        public DbSet<AuthorBook> AuthorBooks { get; set; }
 
         public RepetitionDbContext(DbContextOptions options) : base(options)
         {
@@ -22,6 +23,10 @@ namespace RepetitionInfrastructure
 
             modelBuilder.Entity<Book>()
                 .HasIndex(u => u.Title)
+                .IsUnique();
+
+            modelBuilder.Entity<AuthorBook>()
+                .HasIndex(u => new { u.AuthorId, u.BookId})
                 .IsUnique();
 
             modelBuilder.Entity<BookStorage>()
