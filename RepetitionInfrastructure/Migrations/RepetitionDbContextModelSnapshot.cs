@@ -23,11 +23,11 @@ namespace RepetitionInfrastructure.Migrations
 
             modelBuilder.Entity("AuthorBook", b =>
                 {
-                    b.Property<string>("AuthorsId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("AuthorsId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("BooksId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("BooksId")
+                        .HasColumnType("int");
 
                     b.HasKey("AuthorsId", "BooksId");
 
@@ -38,8 +38,11 @@ namespace RepetitionInfrastructure.Migrations
 
             modelBuilder.Entity("RepetitionCore.Models.Author", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("BirthDate")
                         .IsRequired()
@@ -51,17 +54,23 @@ namespace RepetitionInfrastructure.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
 
                     b.ToTable("Authors");
                 });
 
             modelBuilder.Entity("RepetitionCore.Models.Book", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -71,53 +80,59 @@ namespace RepetitionInfrastructure.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Title")
+                        .IsUnique();
 
                     b.ToTable("Books");
                 });
 
             modelBuilder.Entity("RepetitionCore.Models.BookStorage", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("BookAmount")
                         .HasColumnType("int");
 
-                    b.Property<string>("BookId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("BookStoreId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("BookStoreId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("BookId");
+
+                    b.HasIndex("BookStoreId")
+                        .IsUnique();
 
                     b.ToTable("BookStorages");
                 });
 
             modelBuilder.Entity("RepetitionCore.Models.BookStore", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.Property<string>("BookStorageId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BookStorageId")
+                        .HasColumnType("int");
 
                     b.Property<string>("StoreName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("BookStorageId")
-                        .IsUnique();
 
                     b.ToTable("BookStores");
                 });
@@ -145,23 +160,20 @@ namespace RepetitionInfrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("RepetitionCore.Models.BookStore", "BookStore")
+                        .WithOne("BookStorage")
+                        .HasForeignKey("RepetitionCore.Models.BookStorage", "BookStoreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Book");
+
+                    b.Navigation("BookStore");
                 });
 
             modelBuilder.Entity("RepetitionCore.Models.BookStore", b =>
                 {
-                    b.HasOne("RepetitionCore.Models.BookStorage", "BookStorage")
-                        .WithOne("BookStore")
-                        .HasForeignKey("RepetitionCore.Models.BookStore", "BookStorageId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("BookStorage");
-                });
-
-            modelBuilder.Entity("RepetitionCore.Models.BookStorage", b =>
-                {
-                    b.Navigation("BookStore")
+                    b.Navigation("BookStorage")
                         .IsRequired();
                 });
 #pragma warning restore 612, 618
