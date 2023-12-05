@@ -1,10 +1,12 @@
 using RepetitionInfrastructure;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
 using RepetitionInfrastructure.Services;
 using RepetitionInfrastructure.ServiceInterfaces;
+using Repetition.Extentions;
 
 var builder = WebApplication.CreateBuilder(args);
+
+ConfigurationManager configuration = builder.Configuration;
 
 builder.Services.AddControllers();
 
@@ -14,10 +16,13 @@ builder.Services.AddDbContext<RepetitionDbContext>(options =>
 builder.Services.AddScoped<IAuthorService, AuthorService>();
 builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<IAuthorBookService, AuthorBookService>();
+builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+
+builder.SwaggerForAuth(); // Includes AddSwaggerGen
+builder.IdentityConfing(configuration);
 
 //builder.Services.AddScoped<IHttpContextAccessor, HttpContextAccessor>();
 var app = builder.Build();
@@ -31,6 +36,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

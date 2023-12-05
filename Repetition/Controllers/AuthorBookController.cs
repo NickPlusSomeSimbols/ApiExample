@@ -4,10 +4,10 @@ using RepetitionInfrastructure.ServiceInterfaces;
 
 namespace Repetition.Controllers
 {
-    public class AithorBookController : BaseController
+    public class AuthorBookController : BaseController
     {
         private readonly IAuthorBookService _authorBookService;
-        public AithorBookController(IAuthorBookService authorBookService)
+        public AuthorBookController(IAuthorBookService authorBookService)
         {
             _authorBookService = authorBookService;
         }

@@ -245,7 +245,7 @@ namespace RepetitionInfrastructure.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Authors");
+                    b.ToTable("Authors", (string)null);
                 });
 
             modelBuilder.Entity("RepetitionCore.Models.AuthorBook", b =>
@@ -269,7 +269,7 @@ namespace RepetitionInfrastructure.Migrations
                     b.HasIndex("AuthorId", "BookId")
                         .IsUnique();
 
-                    b.ToTable("AuthorBooks");
+                    b.ToTable("AuthorBooks", (string)null);
                 });
 
             modelBuilder.Entity("RepetitionCore.Models.Book", b =>
@@ -298,7 +298,7 @@ namespace RepetitionInfrastructure.Migrations
                     b.HasIndex("Title")
                         .IsUnique();
 
-                    b.ToTable("Books");
+                    b.ToTable("Books", (string)null);
                 });
 
             modelBuilder.Entity("RepetitionCore.Models.BookSoldReport", b =>
@@ -331,7 +331,7 @@ namespace RepetitionInfrastructure.Migrations
 
                     b.HasIndex("BookStoreId");
 
-                    b.ToTable("BookSoldReports");
+                    b.ToTable("BookSoldReports", (string)null);
                 });
 
             modelBuilder.Entity("RepetitionCore.Models.BookStorage", b =>
@@ -358,7 +358,7 @@ namespace RepetitionInfrastructure.Migrations
                     b.HasIndex("BookStoreId")
                         .IsUnique();
 
-                    b.ToTable("BookStorages");
+                    b.ToTable("BookStorages", (string)null);
                 });
 
             modelBuilder.Entity("RepetitionCore.Models.BookStore", b =>
@@ -378,7 +378,7 @@ namespace RepetitionInfrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("BookStores");
+                    b.ToTable("BookStores", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
