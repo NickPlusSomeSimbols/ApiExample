@@ -10,6 +10,7 @@ namespace RepetitionInfrastructure
         public DbSet<BookStore> BookStores { get; set; }
         public DbSet<BookStorage> BookStorages { get; set; }
         public DbSet<AuthorBook> AuthorBooks { get; set; }
+        public DbSet<BookSoldReport> BookSoldReports { get; set; }
 
         public RepetitionDbContext(DbContextOptions options) : base(options)
         {
