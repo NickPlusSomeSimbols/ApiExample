@@ -1,10 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using RepetitionCore.Models;
+using RepetitionCore.IdentityAuth;
 
 namespace RepetitionInfrastructure
 {
-    public class RepetitionDbContext : DbContext 
+    public class RepetitionDbContext : IdentityDbContext<ApplicationUser>
     {
+        public RepetitionDbContext(DbContextOptions<RepetitionDbContext> options) : base(options) { }
         public DbSet<Book> Books { get; set; }
         public DbSet<Author> Authors { get; set; }
         public DbSet<BookStore> BookStores { get; set; }
@@ -12,12 +15,10 @@ namespace RepetitionInfrastructure
         public DbSet<AuthorBook> AuthorBooks { get; set; }
         public DbSet<BookSoldReport> BookSoldReports { get; set; }
 
-        public RepetitionDbContext(DbContextOptions options) : base(options)
-        {
-        }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<Author>()
                 .HasIndex(u => u.Name)
                 .IsUnique();
