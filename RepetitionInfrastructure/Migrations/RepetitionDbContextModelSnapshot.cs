@@ -21,25 +21,13 @@ namespace RepetitionInfrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("AuthorBook", b =>
-                {
-                    b.Property<string>("AuthorsId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("BooksId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("AuthorsId", "BooksId");
-
-                    b.HasIndex("BooksId");
-
-                    b.ToTable("AuthorBook");
-                });
-
             modelBuilder.Entity("RepetitionCore.Models.Author", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("BirthDate")
                         .IsRequired()
@@ -51,64 +39,139 @@ namespace RepetitionInfrastructure.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
 
                     b.ToTable("Authors");
                 });
 
+            modelBuilder.Entity("RepetitionCore.Models.AuthorBook", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AuthorId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookId");
+
+                    b.HasIndex("AuthorId", "BookId")
+                        .IsUnique();
+
+                    b.ToTable("AuthorBooks");
+                });
+
             modelBuilder.Entity("RepetitionCore.Models.Book", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<float>("Price")
+                        .HasColumnType("real");
 
                     b.Property<string>("PublicationDate")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Title")
+                        .IsUnique();
 
                     b.ToTable("Books");
                 });
 
-            modelBuilder.Entity("RepetitionCore.Models.BookStorage", b =>
+            modelBuilder.Entity("RepetitionCore.Models.BookSoldReport", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("BookAmount")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("BookId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("BookStoreId")
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BookStoreId")
+                        .HasColumnType("int");
+
+                    b.Property<float>("Income")
+                        .HasColumnType("real");
+
+                    b.Property<string>("PuchaseDate")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PurchaseAmount")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("BookId");
+
+                    b.HasIndex("BookStoreId");
+
+                    b.ToTable("BookSoldReports");
+                });
+
+            modelBuilder.Entity("RepetitionCore.Models.BookStorage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BookAmount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BookStoreId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookId");
+
+                    b.HasIndex("BookStoreId")
+                        .IsUnique();
 
                     b.ToTable("BookStorages");
                 });
 
             modelBuilder.Entity("RepetitionCore.Models.BookStore", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.Property<string>("BookStorageId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BookStorageId")
+                        .HasColumnType("int");
 
                     b.Property<string>("StoreName")
                         .IsRequired()
@@ -116,25 +179,45 @@ namespace RepetitionInfrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BookStorageId")
-                        .IsUnique();
-
                     b.ToTable("BookStores");
                 });
 
-            modelBuilder.Entity("AuthorBook", b =>
+            modelBuilder.Entity("RepetitionCore.Models.AuthorBook", b =>
                 {
-                    b.HasOne("RepetitionCore.Models.Author", null)
+                    b.HasOne("RepetitionCore.Models.Author", "Author")
                         .WithMany()
-                        .HasForeignKey("AuthorsId")
+                        .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("RepetitionCore.Models.Book", null)
+                    b.HasOne("RepetitionCore.Models.Book", "Book")
                         .WithMany()
-                        .HasForeignKey("BooksId")
+                        .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Author");
+
+                    b.Navigation("Book");
+                });
+
+            modelBuilder.Entity("RepetitionCore.Models.BookSoldReport", b =>
+                {
+                    b.HasOne("RepetitionCore.Models.Book", "Book")
+                        .WithMany()
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("RepetitionCore.Models.BookStore", "BookStore")
+                        .WithMany()
+                        .HasForeignKey("BookStoreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Book");
+
+                    b.Navigation("BookStore");
                 });
 
             modelBuilder.Entity("RepetitionCore.Models.BookStorage", b =>
@@ -145,23 +228,20 @@ namespace RepetitionInfrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("RepetitionCore.Models.BookStore", "BookStore")
+                        .WithOne("BookStorage")
+                        .HasForeignKey("RepetitionCore.Models.BookStorage", "BookStoreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Book");
+
+                    b.Navigation("BookStore");
                 });
 
             modelBuilder.Entity("RepetitionCore.Models.BookStore", b =>
                 {
-                    b.HasOne("RepetitionCore.Models.BookStorage", "BookStorage")
-                        .WithOne("BookStore")
-                        .HasForeignKey("RepetitionCore.Models.BookStore", "BookStorageId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("BookStorage");
-                });
-
-            modelBuilder.Entity("RepetitionCore.Models.BookStorage", b =>
-                {
-                    b.Navigation("BookStore")
+                    b.Navigation("BookStorage")
                         .IsRequired();
                 });
 #pragma warning restore 612, 618
