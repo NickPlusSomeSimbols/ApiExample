@@ -14,6 +14,10 @@ namespace RepetitionInfrastructure
         public DbSet<BookStorage> BookStorages { get; set; }
         public DbSet<AuthorBook> AuthorBooks { get; set; }
         public DbSet<BookSoldReport> BookSoldReports { get; set; }
+        public DbSet<Basket> Baskets { get; set; }
+        public DbSet<BasketItem> BasketItems { get; set; }
+        public DbSet<Order> Orderd { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

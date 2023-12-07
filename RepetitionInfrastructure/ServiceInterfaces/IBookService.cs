@@ -5,9 +5,9 @@ namespace RepetitionInfrastructure.ServiceInterfaces
 {
     public interface IBookService
     {
+        Book GetBook(int id);
         Task<Book> CreateBookAsync(BookDto bookDto);
-        Task<bool> DeleteBookAsync(int id);
-        Book GetBookAsync(int id);
         Task<Book> UpdateBookAsync(BookDtoUpdate bookDtoUpdate);
+        Task<bool> DeleteBookAsync(int id);
     }
 }

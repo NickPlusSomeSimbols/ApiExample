@@ -14,9 +14,9 @@ namespace Repetition.Controllers
             _bookService = bookService;
         }
         [HttpGet("Get-Book")]
-        public Book GetBookAsync(int id)
+        public Book GetBook(int id)
         {
-            return _bookService.GetBookAsync(id);
+            return _bookService.GetBook(id);
         }
         [HttpPost("Add-Book")]
         public async Task<Book> CreateBookAsync(BookDto bookDto)
