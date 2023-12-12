@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Repetition.Abstractions;
 using RepetitionCore.Models;
-using RepetitionInfrastructure.Services;
+using RepetitionInfrastructure.ServiceInterfaces;
 
 namespace Repetition.Controllers
 {
@@ -17,10 +17,15 @@ namespace Repetition.Controllers
         {
             return _basketService.GetBasket(id);
         }
-        [HttpDelete("Delete-Book")]
-        public async Task DeleteBookAsync(int id)
+        [HttpGet("Create-Book")]
+        public async Task<int> CreateBasketAsync()
         {
-            await _basketService.DeleteBookAsync(id);
+            return await _basketService.CreateBasketAsync();
+        }
+        [HttpDelete("Delete-Book")]
+        public async Task<bool> DeleteBookAsync(int id)
+        {
+            return await _basketService.DeleteBasketAsync(id);
         }
     }
 }

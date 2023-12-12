@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "rqkytz2w57fUnAVljHibsxz2kRq/rJVzerhELUuxC4e0hkBOoqch+DxDgbIxarrNla/MuzxTJUdWVJ8lvmDRBQ==",
+  "dgSpecHash": "kq7tw+zC7KjfPCFHakDzHdAJzIotsduGLtOXL5bCG3BbCqa9fntrTQupO8J1hivIzjxQSh2C7srQaxm4GofhFw==",
   "success": true,
   "projectFilePath": "C:\\Users\\mika\\source\\repos\\Repetition\\RepetitionInfrastructure\\RepetitionInfrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mika\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\mika\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\mika\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\mika\\.nuget\\packages\\mapster\\7.4.0\\mapster.7.4.0.nupkg.sha512",
+    "C:\\Users\\mika\\.nuget\\packages\\mapster.core\\1.2.1\\mapster.core.1.2.1.nupkg.sha512",
     "C:\\Users\\mika\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\mika\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\mika\\.nuget\\packages\\microsoft.aspnetcore.authentication.cookies\\2.2.0\\microsoft.aspnetcore.authentication.cookies.2.2.0.nupkg.sha512",

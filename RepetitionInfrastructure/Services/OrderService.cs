@@ -1,75 +1,53 @@
 ﻿using RepetitionCore.Dto.Book;
 using RepetitionCore.Models;
-using RepetitionInfrastructure.ServiceInterfaces;
 
 namespace RepetitionInfrastructure.Services
 {
-
-    // TODO: Add mapping
-    public class BookService : IBookService
+    public class OrderService 
     {
         private readonly RepetitionDbContext _dbContext;
-        public BookService(RepetitionDbContext dbContext)
+        public OrderService(RepetitionDbContext dbContext)
         {
             _dbContext = dbContext;
         }
-        public Book GetBook(int id)
+        public Order GetOrder(int id)
         {
-            var book = _dbContext.Books.FirstOrDefault(i => i.Id == id);
+            var order = _dbContext.Orders.FirstOrDefault(i => i.Id == id);
 
-            if (book == null)
+            if (order == null)
             {
                 throw new Exception("Item not found");
             }
 
-            return book;
+            return order;
         }
-        public async Task<Book> CreateBookAsync(BookDto bookDto)
+        public async Task<string> CreateOrderAsync(string userId,int basketId)
         {
-            var randomPublishDate = new DateTime(1943, 12, 01).AddDays(new Random().Next(12000)).ToString("dd/MM/yyyy");
+            var basket = _dbContext.Baskets.FirstOrDefault(i => i.Id == basketId);
 
-            Book book = new Book
+            if(basket == null)
             {
-                Title = bookDto.Title,
-                Description = bookDto.Description,
-                PublicationDate = string.IsNullOrEmpty(bookDto.PublicationDate) || bookDto.PublicationDate == "string" ? randomPublishDate : bookDto.PublicationDate,
-            };
-
-            await _dbContext.Books.AddAsync(book);
-            await _dbContext.SaveChangesAsync();
-
-            return book;
-        }
-        public async Task<Book> UpdateBookAsync(BookDtoUpdate bookDtoUpdate)
-        {
-            var book = _dbContext.Books.FirstOrDefault(i => i.Id == bookDtoUpdate.Id);
-
-            if (book == null)
-            {
-                throw new Exception("ItemNotFound");
+                throw new Exception("Basket not found");
             }
 
-            book.Title = string.IsNullOrEmpty(bookDtoUpdate.Title) || bookDtoUpdate.Title == "string" ? book.Title : bookDtoUpdate.Title;
-            book.Description = string.IsNullOrEmpty(bookDtoUpdate.Description) || bookDtoUpdate.Description == "string" ? book.Description : bookDtoUpdate.Description;
-            book.PublicationDate = string.IsNullOrEmpty(bookDtoUpdate.PublicationDate) || bookDtoUpdate.PublicationDate == "string" ? book.PublicationDate : bookDtoUpdate.PublicationDate;
+            var user = _dbContext.Users.FirstOrDefault(i => i.Id == userId);
 
-            await _dbContext.SaveChangesAsync();
-
-            return book;
-        }
-        public async Task<bool> DeleteBookAsync(int id)
-        {
-            var book = _dbContext.Books.FirstOrDefault(i => i.Id == id);
-
-            if (book == null)
+            if(user == null)
             {
-                throw new Exception("Item not found");
+                throw new Exception("User not found");
             }
+        }
+        public async Task<Book> UpdateOrderStateAsync(BookDtoUpdate bookDtoUpdate)
+        {
 
-            _dbContext.Books.Remove(book);
-            await _dbContext.SaveChangesAsync();
+        }
+        public async Task<Book> UpdateOrderAsync(BookDtoUpdate bookDtoUpdate)
+        {
+            
+        }
+        public async Task<bool> DeleteOrderAsync(int id)
+        {
 
-            return true;
         }
     }
 }

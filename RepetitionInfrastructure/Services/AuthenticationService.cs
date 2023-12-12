@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using RepetitionCore.Authentication;
 using RepetitionCore.IdentityAuth;
+using RepetitionInfrastructure.ServiceInterfaces;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Repetition.Abstractions;
 using RepetitionCore.Authentication;
+using RepetitionInfrastructure.ServiceInterfaces;
 using RepetitionInfrastructure.Services;
 
 namespace Repetition.Controllers
@@ -54,7 +55,7 @@ namespace Repetition.Controllers
 
             switch (registerAdmin)
             {
-                    case "Unauthorized":
+                case "Unauthorized":
                     return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
             }
 

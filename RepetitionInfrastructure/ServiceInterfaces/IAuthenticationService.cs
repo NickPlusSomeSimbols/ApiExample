@@ -1,6 +1,6 @@
 ﻿using RepetitionCore.Authentication;
 
-namespace RepetitionInfrastructure.Services
+namespace RepetitionInfrastructure.ServiceInterfaces
 {
     public interface IAuthenticationService
     {

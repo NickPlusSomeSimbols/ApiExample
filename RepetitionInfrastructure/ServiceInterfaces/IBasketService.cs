@@ -1,10 +1,11 @@
 ﻿using RepetitionCore.Models;
 
-namespace RepetitionInfrastructure.Services
+namespace RepetitionInfrastructure.ServiceInterfaces
 {
     public interface IBasketService
     {
-        Task<bool> DeleteBookAsync(int id);
+        Task<bool> DeleteBasketAsync(int id);
         Basket GetBasket(int id);
+        Task<int> CreateBasketAsync();
     }
 }
