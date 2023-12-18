@@ -1,0 +1,298 @@
+﻿++Solution 'Repetition' ‎(3 of 3 projects)
+i:{00000000-0000-0000-0000-000000000000}:Repetition.sln
+++Repetition
+i:{00000000-0000-0000-0000-000000000000}:Repetition
+++Connected Services 
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:>591
+++Dependencies
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:>590
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:>441
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:>440
+++Properties
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\users\mika\source\repos\repetition\repetition\properties\
+++Abstractions
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\users\mika\source\repos\repetition\repetition\abstractions\
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\abstractions\
+++Controllers
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\users\mika\source\repos\repetition\repetition\controllers\
+++AuthenticationController.cs
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\users\mika\source\repos\repetition\repetition\controllers\authenticationcontroller.cs
+++AuthorBookController.cs
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\users\mika\source\repos\repetition\repetition\controllers\authorbookcontroller.cs
+++AuthorController.cs
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\users\mika\source\repos\repetition\repetition\controllers\authorcontroller.cs
+++BasketController.cs
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\users\mika\source\repos\repetition\repetition\controllers\basketcontroller.cs
+++BookController.cs
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\users\mika\source\repos\repetition\repetition\controllers\bookcontroller.cs
+++Extentions
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\users\mika\source\repos\repetition\repetition\extentions\
+++Extentions.cs
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\users\mika\source\repos\repetition\repetition\extentions\extentions.cs
+++appsettings.json
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\users\mika\source\repos\repetition\repetition\appsettings.json
+++Program.cs
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\users\mika\source\repos\repetition\repetition\program.cs
+++No service dependencies discovered
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:>592
+++Analyzers
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:analyzers
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:analyzers
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:analyzers
+++Frameworks
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:frameworks
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:frameworks
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:frameworks
+++Packages
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:packages
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:packages
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:packages
+++Projects
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:projects
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:projects
+++launchSettings.json
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\users\mika\source\repos\repetition\repetition\properties\launchsettings.json
+++BaseController.cs
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\users\mika\source\repos\repetition\repetition\abstractions\basecontroller.cs
+++appsettings.Development.json
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\users\mika\source\repos\repetition\repetition\appsettings.development.json
+++Microsoft.AspNetCore.Analyzers
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
+++Microsoft.AspNetCore.App.Analyzers
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+++Microsoft.AspNetCore.App.CodeFixes
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+++Microsoft.AspNetCore.Components.Analyzers
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
+++Microsoft.AspNetCore.Mvc.Analyzers
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
+++Microsoft.AspNetCore.Razor.SourceGenerator.Tooling.Internal
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk.razor\source-generators\microsoft.aspnetcore.razor.sourcegenerator.tooling.internal.dll
+++Microsoft.CodeAnalysis.CSharp.NetAnalyzers
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+++Microsoft.CodeAnalysis.NetAnalyzers
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+++Microsoft.EntityFrameworkCore.Analyzers
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\users\mika\.nuget\packages\microsoft.entityframeworkcore.analyzers\7.0.14\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.22\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\.nuget\packages\microsoft.entityframeworkcore.analyzers\7.0.14\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+++Microsoft.Extensions.Logging.Generators
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\users\mika\.nuget\packages\microsoft.extensions.logging.abstractions\7.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\.nuget\packages\microsoft.extensions.logging.abstractions\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\.nuget\packages\microsoft.extensions.logging.abstractions\7.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+++Microsoft.NET.Sdk.Razor.SourceGenerators
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk.razor\source-generators\microsoft.net.sdk.razor.sourcegenerators.dll
+++System.Text.Json.SourceGeneration
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\users\mika\.nuget\packages\system.text.json\7.0.0\analyzers\dotnet\roslyn4.0\cs\system.text.json.sourcegeneration.dll
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.4\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\.nuget\packages\system.text.json\7.0.0\analyzers\dotnet\roslyn4.0\cs\system.text.json.sourcegeneration.dll
+++Microsoft.AspNetCore.App
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\users\mika\source\repos\repetition\repetition\microsoft.aspnetcore.app
+++Microsoft.NETCore.App
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\users\mika\source\repos\repetition\repetition\microsoft.netcore.app
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\microsoft.netcore.app
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\microsoft.netcore.app
+++Microsoft.AspNetCore.Authentication.JwtBearer (6.0.22)
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:>637
+++Microsoft.EntityFrameworkCore.Design (7.0.14)
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:>629
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:>631
+++Swashbuckle.AspNetCore (6.5.0)
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:>630
+++Swashbuckle.AspNetCore.SwaggerGen (6.5.0)
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:>634
+++Swashbuckle.AspNetCore.SwaggerUI (6.5.0)
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:>638
+++RepetitionInfrastructure
+i:{a374ed9e-1916-4868-af05-ef4e442b2f51}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\bin\debug\net6.0\repetitioninfrastructure.dll
+i:{00000000-0000-0000-0000-000000000000}:RepetitionInfrastructure
+++RepetitionCore
+i:{00000000-0000-0000-0000-000000000000}:RepetitionCore
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioncore\bin\debug\net6.0\repetitioncore.dll
+++BaseEntity.cs
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\abstractions\baseentity.cs
+++Authentication
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\authentication\
+++LoginModel.cs
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\authentication\loginmodel.cs
+++RegisterModel.cs
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\authentication\registermodel.cs
+++Responce.cs
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\authentication\responce.cs
+++Dto
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\dto\
+++Author
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\dto\author\
+++AuthorDto.cs
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\dto\author\authordto.cs
+++AuthorDtoCreate.cs
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\dto\author\authordtocreate.cs
+++AuthorDtoUpdate.cs
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\dto\author\authordtoupdate.cs
+++Book
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\dto\book\
+++BookDto.cs
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\dto\book\bookdto.cs
+++BookDtoCreate.cs
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\dto\book\bookdtocreate.cs
+++BookDtoUpdate.cs
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\dto\book\bookdtoupdate.cs
+++Order
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\dto\order\
+++OrderDto.cs
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\dto\order\orderdto.cs
+++OrderDtoCreate.cs
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\dto\order\orderdtocreate.cs
+++OrderDtoUpdate.cs
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\dto\order\orderdtoupdate.cs
+++OrderDtoUpdateState.cs
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\dto\order\orderdtoupdatestate.cs
+++IdentityAuth
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\identityauth\
+++ApplicationUser.cs
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\identityauth\applicationuser.cs
+++UserRoles.cs
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\identityauth\userroles.cs
+++Models
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\models\
+++Enums
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\models\enums\
+++OrderStates.cs
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\models\enums\orderstates.cs
+++Author.cs
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\models\author.cs
+++AuthorBook.cs
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\models\authorbook.cs
+++Basket.cs
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\models\basket.cs
+++BasketItem.cs
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\models\basketitem.cs
+++Book.cs
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\models\book.cs
+++BookSoldReport.cs
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\models\booksoldreport.cs
+++BookStorage.cs
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\models\bookstorage.cs
+++BookStore.cs
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\models\bookstore.cs
+++Order.cs
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\models\order.cs
+++OrderItem.cs
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\models\orderitem.cs
+++Microsoft.AspNetCore.Identity (2.2.0)
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:>635
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:>633
+++Microsoft.AspNetCore.Identity.EntityFrameworkCore (6.0.22)
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:>639
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:>636
+++Migrations
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\migrations\
+++ServiceInterfaces
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\serviceinterfaces\
+++IAuthenticationService.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\serviceinterfaces\iauthenticationservice.cs
+++IAuthorBookService.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\serviceinterfaces\iauthorbookservice.cs
+++IAuthorService.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\serviceinterfaces\iauthorservice.cs
+++IBasketItemService.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\serviceinterfaces\ibasketitemservice.cs
+++IBasketService.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\serviceinterfaces\ibasketservice.cs
+++IBookService.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\serviceinterfaces\ibookservice.cs
+++IBookSoldReportService.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\serviceinterfaces\ibooksoldreportservice.cs
+++Services
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\services\
+++AuthenticationService.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\services\authenticationservice.cs
+++AuthorBookService.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\services\authorbookservice.cs
+++AuthorService.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\services\authorservice.cs
+++BasketService.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\services\basketservice.cs
+++BookService.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\services\bookservice.cs
+++BookSoldReportService.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\services\booksoldreportservice.cs
+++OrderService.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\services\orderservice.cs
+++RepetitionDbContext.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\repetitiondbcontext.cs
+++20231201103132_FirstModels.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\migrations\20231201103132_firstmodels.cs
+++20231201111321_StoreStorageModelsAdded.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\migrations\20231201111321_storestoragemodelsadded.cs
+++20231201112843_MinorRelationChange.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\migrations\20231201112843_minorrelationchange.cs
+++20231204050940_RemoveAll.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\migrations\20231204050940_removeall.cs
+++20231204051457_PK_Addition.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\migrations\20231204051457_pk_addition.cs
+++20231204061408_UniqueConstraints.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\migrations\20231204061408_uniqueconstraints.cs
+++20231204123052_AuthoBookTable.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\migrations\20231204123052_authobooktable.cs
+++20231205053314_ReportTable.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\migrations\20231205053314_reporttable.cs
+++20231205080701_IdentityInit.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\migrations\20231205080701_identityinit.cs
+++20231205133407_BasketMigrartion.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\migrations\20231205133407_basketmigrartion.cs
+++20231205135056_BasketMigrartionMinorFix.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\migrations\20231205135056_basketmigrartionminorfix.cs
+++20231205140958_BasketLogicChange.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\migrations\20231205140958_basketlogicchange.cs
+++20231206065120_OrderingModels.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\migrations\20231206065120_orderingmodels.cs
+++RepetitionDbContextModelSnapshot.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\migrations\repetitiondbcontextmodelsnapshot.cs
+++Mapster (7.4.0)
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:>640
+++Microsoft.AspNetCore.Mvc.Abstractions (2.2.0)
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:>641
+++Microsoft.EntityFrameworkCore (7.0.14)
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:>626
+++Microsoft.EntityFrameworkCore.SqlServer (7.0.14)
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:>628
+++Microsoft.EntityFrameworkCore.Tools (7.0.14)
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:>642
+++20231201103132_FirstModels.Designer.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\migrations\20231201103132_firstmodels.designer.cs
+++20231201111321_StoreStorageModelsAdded.Designer.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\migrations\20231201111321_storestoragemodelsadded.designer.cs
+++20231201112843_MinorRelationChange.Designer.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\migrations\20231201112843_minorrelationchange.designer.cs
+++20231204050940_RemoveAll.Designer.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\migrations\20231204050940_removeall.designer.cs
+++20231204051457_PK_Addition.Designer.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\migrations\20231204051457_pk_addition.designer.cs
+++20231204061408_UniqueConstraints.Designer.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\migrations\20231204061408_uniqueconstraints.designer.cs
+++20231204123052_AuthoBookTable.Designer.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\migrations\20231204123052_authobooktable.designer.cs
+++20231205053314_ReportTable.Designer.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\migrations\20231205053314_reporttable.designer.cs
+++20231205080701_IdentityInit.Designer.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\migrations\20231205080701_identityinit.designer.cs
+++20231205133407_BasketMigrartion.Designer.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\migrations\20231205133407_basketmigrartion.designer.cs
+++20231205135056_BasketMigrartionMinorFix.Designer.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\migrations\20231205135056_basketmigrartionminorfix.designer.cs
+++20231205140958_BasketLogicChange.Designer.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\migrations\20231205140958_basketlogicchange.designer.cs
+++20231206065120_OrderingModels.Designer.cs
+i:{bf43dc27-5b53-4e8a-a61e-ecf1a951895e}:c:\users\mika\source\repos\repetition\repetitioninfrastructure\migrations\20231206065120_orderingmodels.designer.cs
+++NewFolder
+++asker
+++Basket
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\dto\basket\
+++BasketDtoFull.cs
+++BasketDto.cs
+i:{e8cef5a4-1833-44bd-be74-efa0ac447e06}:c:\users\mika\source\repos\repetition\repetitioncore\dto\basket\basketdto.cs

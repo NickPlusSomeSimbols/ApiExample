@@ -1,8 +1,6 @@
-using Repetition.Abstractions;
-using RepetitionCore.Models;
-using RepetitionCore.Dto.Author;
 using Microsoft.AspNetCore.Mvc;
-using RepetitionInfrastructure.Services;
+using Repetition.Abstractions;
+using RepetitionCore.Dto.Author;
 using RepetitionInfrastructure.ServiceInterfaces;
 
 namespace Repetition.Controllers
@@ -16,17 +14,17 @@ namespace Repetition.Controllers
             _authorService = authorService;
         }
         [HttpGet("Get-Author")]
-        public Author AuthorGetAuthorAsync(int id)
+        public AuthorDto AuthorGetAuthorAsync(int id)
         {
             return _authorService.GetAuthor(id);
         }
         [HttpPost("Add-Author")]
-        public async Task<Author> CreateAuthorAsync(AuthorDto authorDto)
+        public async Task<AuthorDto> CreateAuthorAsync(AuthorDtoCreate authorDto)
         {
             return await _authorService.CreateAuthorAsync(authorDto);
         }
         [HttpPatch("Update-Author")]
-        public async Task<Author> UpdateAuthorAsync(AuthorDtoUpdate authorDtoUpdate)
+        public async Task<AuthorDto> UpdateAuthorAsync(AuthorDtoUpdate authorDtoUpdate)
         {
             return await _authorService.UpdateAuthorAsync(authorDtoUpdate);
         }

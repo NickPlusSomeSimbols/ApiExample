@@ -2,7 +2,8 @@
 {
     public enum OrderState : byte
     {
-        Pending,
+        InQueue,
+        Prepearing,
         Shipping,
         Delivered,
         Canceled

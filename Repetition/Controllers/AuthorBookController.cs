@@ -19,7 +19,7 @@ namespace Repetition.Controllers
         [HttpPost("Add-Bind")]
         public async Task<string> BindAuthorBookAsync(int authorId, int bookId)
         {
-            return await _authorBookService.AddBookToAuthorAsync(authorId, bookId);
+            return await _authorBookService.AddBindAsync(authorId, bookId);
         }
         [HttpPatch("Update-Bind")]
         public async Task<string> UpdateBookAuthorBindAsync(int Id, int authorId, int bookId)
@@ -29,7 +29,7 @@ namespace Repetition.Controllers
         [HttpDelete("Delete-Bind")]
         public async Task<bool> DeleteBookAuthorBindAsync(int id)
         {
-            return await _authorBookService.DeleteBookAuthorBindAsync(id);
+            return await _authorBookService.DeleteBindAsync(id);
         }
     }
 }

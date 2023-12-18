@@ -5,9 +5,9 @@ namespace RepetitionInfrastructure.ServiceInterfaces
 {
     public interface IAuthorService
     {
-        Task<Author> CreateAuthorAsync(AuthorDto authorDto);
+        AuthorDto GetAuthor(int id);
+        Task<AuthorDto> CreateAuthorAsync(AuthorDtoCreate authorDto);
+        Task<AuthorDto> UpdateAuthorAsync(AuthorDtoUpdate authorDtoUpdate);
         Task<bool> DeleteAuthorAsync(int id);
-        Author GetAuthor(int id);
-        Task<Author> UpdateAuthorAsync(AuthorDtoUpdate authorDtoUpdate);
     }
 }

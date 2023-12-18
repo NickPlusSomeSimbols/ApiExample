@@ -1,16 +1,18 @@
-﻿using RepetitionCore.Dto.Book;
+﻿using RepetitionCore.Models.Enums;
 using RepetitionCore.Models;
+using Microsoft.EntityFrameworkCore;
+using Mapster;
 
 namespace RepetitionInfrastructure.Services
 {
-    public class OrderService 
+    public class OrderService : IOrderService
     {
         private readonly RepetitionDbContext _dbContext;
         public OrderService(RepetitionDbContext dbContext)
         {
             _dbContext = dbContext;
         }
-        public Order GetOrder(int id)
+        public OrderDto GetOrder(int id)
         {
             var order = _dbContext.Orders.FirstOrDefault(i => i.Id == id);
 
@@ -19,35 +21,69 @@ namespace RepetitionInfrastructure.Services
                 throw new Exception("Item not found");
             }
 
-            return order;
+            return order.Adapt<OrderDto>();
         }
-        public async Task<string> CreateOrderAsync(string userId,int basketId)
+        public async Task<OrderDtoCreate> CreateOrderAsync(string userId, int basketId)
         {
             var basket = _dbContext.Baskets.FirstOrDefault(i => i.Id == basketId);
 
-            if(basket == null)
+            if (basket == null)
             {
-                throw new Exception("Basket not found");
+                throw new Exception("Basket is not found");
             }
 
             var user = _dbContext.Users.FirstOrDefault(i => i.Id == userId);
 
-            if(user == null)
+            if (user == null)
             {
-                throw new Exception("User not found");
+                throw new Exception("User is not found");
             }
+
+            var basketItems = _dbContext.BasketItems.Where(i => i.BasketId == basketId);
+
+            if (!basketItems.Any())
+            {
+                throw new Exception("Unable to create empty oreder");
+            }
+
+            var order = new Order()
+            {
+                CreationDate = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss"),
+                Price = basketItems.Sum(i => i.TotalPrice),
+                Items = basketItems.Adapt<List<OrderItem>>(),
+                State = OrderState.Prepearing,
+            };
+
+            return null; //!!!
         }
-        public async Task<Book> UpdateOrderStateAsync(BookDtoUpdate bookDtoUpdate)
+        /*public async Task<OrderDtoUpdateState> UpdateOrderStateAsync(OrderDtoUpdateState bookDtoUpdate)
         {
 
-        }
-        public async Task<Book> UpdateOrderAsync(BookDtoUpdate bookDtoUpdate)
+        }*/
+        public async Task<OrderDto> UpdateOrderAsync(OrderDtoUpdate orderDtoUpdate)
         {
-            
+            Order? order = _dbContext.Orders.Include(i => i.Items).FirstOrDefault(i => i.Id == orderDtoUpdate.OrderId);
+
+            if (order == null)
+            {
+                throw new Exception("No such order found");
+            }
+
+            if (order.State != OrderState.InQueue)
+            {
+                throw new InvalidOperationException("Order already is on the way");
+            }
+
+            // Implement Counting in storage
+
+            OrderItem? orderItem = order.Items.FirstOrDefault(i => i.Id == orderDtoUpdate.OrderItemid);
+            orderItem.Amount = orderDtoUpdate.Amount;
+
+            return null; //!!!!!
         }
         public async Task<bool> DeleteOrderAsync(int id)
         {
-
+            return false; //!!!
         }
     }
 }

@@ -2,8 +2,8 @@
 {
     public interface IAuthorBookService
     {
-        Task<string> AddBookToAuthorAsync(int authorId, int bookId);
-        Task<bool> DeleteBookAuthorBindAsync(int id);
+        Task<string> AddBindAsync(int authorId, int bookId);
+        Task<bool> DeleteBindAsync(int id);
         string GetAllBinds();
         Task<string> UpdateBookToAuthorAsync(int Id, int authorId, int bookId);
     }

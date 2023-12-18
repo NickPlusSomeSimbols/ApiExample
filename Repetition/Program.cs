@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using RepetitionInfrastructure.Services;
 using RepetitionInfrastructure.ServiceInterfaces;
 using Repetition.Extentions;
+using RepetitionCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,10 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<RepetitionDbContext>(options =>
         options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+
+builder.Services.AddScoped<IBookStoreService, BookStoreService>();
+builder.Services.AddScoped<IBasketService, BasketService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IAuthorService, AuthorService>();
 builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<IAuthorBookService, AuthorBookService>();
@@ -26,6 +31,8 @@ builder.IdentityConfing(configuration);
 
 //builder.Services.AddScoped<IHttpContextAccessor, HttpContextAccessor>();
 var app = builder.Build();
+
+MappingConfiguration.Configure();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

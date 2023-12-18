@@ -299,17 +299,17 @@ namespace RepetitionInfrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
                     b.Property<int>("BasketId")
                         .HasColumnType("int");
 
                     b.Property<int>("BookId")
                         .HasColumnType("int");
 
-                    b.Property<int>("TotalAmount")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TotalPrice")
-                        .HasColumnType("int");
+                    b.Property<float>("TotalPrice")
+                        .HasColumnType("real");
 
                     b.HasKey("Id");
 
@@ -390,13 +390,13 @@ namespace RepetitionInfrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("BookAmount")
+                    b.Property<int?>("BookAmount")
                         .HasColumnType("int");
 
-                    b.Property<int>("BookId")
+                    b.Property<int?>("BookId")
                         .HasColumnType("int");
 
-                    b.Property<int>("BookStoreId")
+                    b.Property<int?>("BookStoreId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -404,7 +404,8 @@ namespace RepetitionInfrastructure.Migrations
                     b.HasIndex("BookId");
 
                     b.HasIndex("BookStoreId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[BookStoreId] IS NOT NULL");
 
                     b.ToTable("BookStorages");
                 });
@@ -417,7 +418,7 @@ namespace RepetitionInfrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("BookStorageId")
+                    b.Property<int?>("BookStorageId")
                         .HasColumnType("int");
 
                     b.Property<string>("StoreName")
@@ -448,11 +449,14 @@ namespace RepetitionInfrastructure.Migrations
                     b.Property<float>("Price")
                         .HasColumnType("real");
 
+                    b.Property<byte>("State")
+                        .HasColumnType("tinyint");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ApplicationUserId");
 
-                    b.ToTable("Orderd");
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("RepetitionCore.Models.OrderItem", b =>
@@ -463,16 +467,16 @@ namespace RepetitionInfrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
 
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("Quantity")
+                    b.Property<int>("Price")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -565,7 +569,7 @@ namespace RepetitionInfrastructure.Migrations
 
             modelBuilder.Entity("RepetitionCore.Models.BasketItem", b =>
                 {
-                    b.HasOne("RepetitionCore.Models.Basket", "Basket")
+                    b.HasOne("RepetitionCore.Models.Basket", null)
                         .WithMany("BasketItems")
                         .HasForeignKey("BasketId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -576,8 +580,6 @@ namespace RepetitionInfrastructure.Migrations
                         .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Basket");
 
                     b.Navigation("Book");
                 });
@@ -605,15 +607,11 @@ namespace RepetitionInfrastructure.Migrations
                 {
                     b.HasOne("RepetitionCore.Models.Book", "Book")
                         .WithMany()
-                        .HasForeignKey("BookId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("BookId");
 
                     b.HasOne("RepetitionCore.Models.BookStore", "BookStore")
                         .WithOne("BookStorage")
-                        .HasForeignKey("RepetitionCore.Models.BookStorage", "BookStoreId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("RepetitionCore.Models.BookStorage", "BookStoreId");
 
                     b.Navigation("Book");
 
@@ -649,8 +647,7 @@ namespace RepetitionInfrastructure.Migrations
 
             modelBuilder.Entity("RepetitionCore.Models.BookStore", b =>
                 {
-                    b.Navigation("BookStorage")
-                        .IsRequired();
+                    b.Navigation("BookStorage");
                 });
 
             modelBuilder.Entity("RepetitionCore.Models.Order", b =>

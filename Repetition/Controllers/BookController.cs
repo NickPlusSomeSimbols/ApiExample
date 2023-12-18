@@ -14,17 +14,17 @@ namespace Repetition.Controllers
             _bookService = bookService;
         }
         [HttpGet("Get-Book")]
-        public Book GetBook(int id)
+        public BookDto GetBook(int id)
         {
             return _bookService.GetBook(id);
         }
         [HttpPost("Add-Book")]
-        public async Task<Book> CreateBookAsync(BookDto bookDto)
+        public async Task<BookDto> CreateBookAsync(BookDtoCreate bookDto)
         {
             return await _bookService.CreateBookAsync(bookDto);
         }
         [HttpPatch("Update-Book")]
-        public async Task<Book> UpdateBookAsync(BookDtoUpdate bookDtoUpdate)
+        public async Task<BookDto> UpdateBookAsync(BookDtoUpdate bookDtoUpdate)
         {
             return await _bookService.UpdateBookAsync(bookDtoUpdate);
         }

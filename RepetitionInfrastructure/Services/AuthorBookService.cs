@@ -24,7 +24,7 @@ namespace RepetitionInfrastructure.Services
             return result;
         }
 
-        public async Task<string> AddBookToAuthorAsync(int authorId, int bookId)
+        public async Task<string> AddBindAsync(int authorId, int bookId)
         {
             var book = _dbContext.Books.FirstOrDefault(i => i.Id == bookId);
 
@@ -88,7 +88,7 @@ namespace RepetitionInfrastructure.Services
                 $"To: BookId-{oldBindB} to AuthorId-{oldBindA}";
         }
 
-        public Task<bool> DeleteBookAuthorBindAsync(int id)
+        public Task<bool> DeleteBindAsync(int id)
         {
             var bind = _dbContext.AuthorBooks.FirstOrDefault(i => i.Id == id);
 

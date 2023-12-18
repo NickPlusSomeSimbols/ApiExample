@@ -1,6 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Mapster;
+using Microsoft.EntityFrameworkCore;
 using RepetitionCore.Dto.Author;
 using RepetitionCore.Models;
+using RepetitionInfrastructure.ErrorHandling.CustomExceptions;
 using RepetitionInfrastructure.ServiceInterfaces;
 
 namespace RepetitionInfrastructure.Services
@@ -13,18 +15,18 @@ namespace RepetitionInfrastructure.Services
         {
             _dbContext = dbContext;
         }
-        public Author GetAuthor(int id)
+        public AuthorDto GetAuthor(int id)
         {
             var author = _dbContext.Authors.FirstOrDefault(i => i.Id == id);
 
             if (author == null)
             {
-                throw new Exception("Item not found");
+                throw new ItemNotFoundException(nameof(author));
             }
 
-            return author;
+            return author.Adapt<AuthorDto>();
         }
-        public async Task<Author> CreateAuthorAsync(AuthorDto authorDto)
+        public async Task<AuthorDto> CreateAuthorAsync(AuthorDtoCreate authorDto)
         {
             var randomBirthDate = new DateTime(1923, 12, 01).AddDays(new Random().Next(20000)).ToString("dd/MM/yyyy");
             var randomDeathDate = DateTime.Now.AddDays(-new Random().Next(10000)).ToString("dd/MM/yyyy");
@@ -39,15 +41,15 @@ namespace RepetitionInfrastructure.Services
             await _dbContext.Authors.AddAsync(author);
             await _dbContext.SaveChangesAsync();
 
-            return author;
+            return author.Adapt<AuthorDto>();
         }
-        public async Task<Author> UpdateAuthorAsync(AuthorDtoUpdate authorDtoUpdate)
+        public async Task<AuthorDto> UpdateAuthorAsync(AuthorDtoUpdate authorDtoUpdate)
         {
             var author = _dbContext.Authors.FirstOrDefault(i => i.Id == authorDtoUpdate.Id);
 
             if (author == null)
             {
-                throw new Exception("ItemNotFound");
+                throw new ItemNotFoundException(nameof(author));
             }
 
             author.Name = string.IsNullOrEmpty(authorDtoUpdate.Name) || author.Name == authorDtoUpdate.Name ? author.Name : authorDtoUpdate.Name;
@@ -56,7 +58,7 @@ namespace RepetitionInfrastructure.Services
 
             await _dbContext.SaveChangesAsync();
 
-            return author;
+            return author.Adapt<AuthorDto>();
         }
         public async Task<bool> DeleteAuthorAsync(int id)
         {
@@ -64,7 +66,7 @@ namespace RepetitionInfrastructure.Services
 
             if (author == null)
             {
-                throw new Exception("Item not found");
+                throw new ItemNotFoundException(nameof(author));
             }
 
             _dbContext.Authors.Remove(author);

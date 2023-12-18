@@ -25,17 +25,11 @@ namespace RepetitionInfrastructure.Services
         {
             var store = _dbContext.BookStores.FirstOrDefault(i => i.Id == storeId);
 
-            if(store == null)
-            {
-                throw new Exception("No such store found");
-            }
+            ArgumentNullException.ThrowIfNull(store, nameof(store)); // No store found
 
             var book = _dbContext.Books.FirstOrDefault(i => i.Id == bookId);
 
-            if (book == null)
-            {
-                throw new Exception("No such book found");
-            }
+            ArgumentNullException.ThrowIfNull(book, nameof(book)); // No book found
 
             BookSoldReport report = new BookSoldReport
             {

@@ -1,5 +1,8 @@
-﻿using RepetitionCore.Dto.Book;
+﻿using Mapster;
+using RepetitionCore.Dto.Book;
 using RepetitionCore.Models;
+using RepetitionInfrastructure.ErrorHandling;
+using RepetitionInfrastructure.ErrorHandling.CustomExceptions;
 using RepetitionInfrastructure.ServiceInterfaces;
 
 namespace RepetitionInfrastructure.Services
@@ -13,18 +16,18 @@ namespace RepetitionInfrastructure.Services
         {
             _dbContext = dbContext;
         }
-        public Book GetBook(int id)
+        public BookDto GetBook(int id)
         {
             var book = _dbContext.Books.FirstOrDefault(i => i.Id == id);
 
             if (book == null)
             {
-                throw new Exception("Item not found");
+                throw new ItemNotFoundException(nameof(book));
             }
 
-            return book;
+            return book.Adapt<BookDto>(); // Done
         }
-        public async Task<Book> CreateBookAsync(BookDto bookDto)
+        public async Task<BookDto> CreateBookAsync(BookDtoCreate bookDto)
         {
             var randomPublishDate = new DateTime(1943, 12, 01).AddDays(new Random().Next(12000)).ToString("dd/MM/yyyy");
 
@@ -38,15 +41,15 @@ namespace RepetitionInfrastructure.Services
             await _dbContext.Books.AddAsync(book);
             await _dbContext.SaveChangesAsync();
 
-            return book;
+            return book.Adapt<BookDto>(); // Done
         }
-        public async Task<Book> UpdateBookAsync(BookDtoUpdate bookDtoUpdate)
+        public async Task<BookDto> UpdateBookAsync(BookDtoUpdate bookDtoUpdate)
         {
             var book = _dbContext.Books.FirstOrDefault(i => i.Id == bookDtoUpdate.Id);
 
             if (book == null)
             {
-                throw new Exception("ItemNotFound");
+                throw new ItemNotFoundException(nameof(book));
             }
 
             book.Title = string.IsNullOrEmpty(bookDtoUpdate.Title) || bookDtoUpdate.Title == "string" ? book.Title : bookDtoUpdate.Title;
@@ -55,7 +58,7 @@ namespace RepetitionInfrastructure.Services
 
             await _dbContext.SaveChangesAsync();
 
-            return book;
+            return book.Adapt<BookDto>(); // Done
         }
         public async Task<bool> DeleteBookAsync(int id)
         {
@@ -63,7 +66,7 @@ namespace RepetitionInfrastructure.Services
 
             if (book == null)
             {
-                throw new Exception("Item not found");
+                throw new ItemNotFoundException(nameof(book));
             }
 
             _dbContext.Books.Remove(book);
