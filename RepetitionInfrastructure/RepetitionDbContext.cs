@@ -34,16 +34,6 @@ namespace RepetitionInfrastructure
             modelBuilder.Entity<AuthorBook>()
                 .HasIndex(u => new { u.AuthorId, u.BookId})
                 .IsUnique();
-
-            modelBuilder.Entity<BookStorage>()
-                .HasOne(bs => bs.BookStore)
-                .WithOne(bs => bs.BookStorage)
-                .HasForeignKey<BookStore>(bs => bs.BookStorageId);
-
-            modelBuilder.Entity<BookStore>()
-                .HasOne(bs => bs.BookStorage)
-                .WithOne(bs => bs.BookStore)
-                .HasForeignKey<BookStorage>(bs => bs.BookStoreId);
         }
     }
 }

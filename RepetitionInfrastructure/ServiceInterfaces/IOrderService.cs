@@ -4,9 +4,9 @@ namespace RepetitionInfrastructure.Services
 {
     public interface IOrderService
     {
-        Task<OrderDtoCreate> CreateOrderAsync(string userId, int basketId);
-        Task<bool> DeleteOrderAsync(int id);
         OrderDto GetOrder(int id);
-        Task<OrderDto> UpdateOrderAsync(OrderDtoUpdate orderDtoUpdate);
+        Task<OrderDtoCreate> CreateOrderAsync(string userName);
+        string UpdateOrderState(OrderDtoUpdateState bookDtoUpdate);
+        bool DeleteOrder(int id);
     }
 }

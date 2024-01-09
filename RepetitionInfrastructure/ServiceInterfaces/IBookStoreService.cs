@@ -5,10 +5,11 @@ namespace RepetitionInfrastructure.Services
 {
     public interface IBookStoreService
     {
-        Task<BookStoreDto> AddStoreAsync(string name);
-        bool DeleteStore(int id);
         BookStore GetStore(int id);
+        Task<BookStoreDto> AddStoreAsync(string name);
+        Task<string> SetStorageStock(string storeName, StorageStockDto storageStockDto);
         string ListStorage(int storeId);
         Task<BookStoreDto> UpdateStoreAsync(int id, string newName);
+        Task <bool> DeleteStoreAsync(int id);
     }
 }

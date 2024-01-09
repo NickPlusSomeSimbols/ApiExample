@@ -13,25 +13,25 @@ namespace Repetition.Controllers
         {
             _orderService = orderService;
         }
-        [HttpGet("Get-Book")]
+        [HttpGet("Get-Order")]
         public OrderDto GetOrder(int id)
         {
             return _orderService.GetOrder(id);
         }
-        [HttpPost("Add-Book")]
-        public async Task<OrderDtoCreate> CreateOrderAsync(string userId, int basketId) // to rething UserId/BasketId
+        [HttpPost("Add-Order")]
+        public async Task<OrderDtoCreate> CreateOrderAsync(string userId)
         {
-            return await _orderService.CreateOrderAsync(userId, basketId);
+            return await _orderService.CreateOrderAsync(userId);
         }
-        [HttpPatch("Update-Book")]
-        public async Task<OrderDto> UpdateOrderAsync(OrderDtoUpdate bookDtoUpdate)
+        [HttpPatch("Update-Order")]
+        public string UpdateOrderAsync(OrderDtoUpdateState bookDtoUpdate)
         {
-            return await _orderService.UpdateOrderAsync(bookDtoUpdate);
+            return _orderService.UpdateOrderState(bookDtoUpdate);
         }
-        [HttpDelete("Delete-Book")]
-        public async Task<bool> DeleteOrder(int id)
+        [HttpDelete("Delete-Order")]
+        public bool DeleteOrder(int id)
         {
-            return await _orderService.DeleteOrderAsync(id);
+            return _orderService.DeleteOrder(id);
         }
     }
 }

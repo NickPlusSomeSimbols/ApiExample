@@ -1,7 +1,8 @@
-﻿using RepetitionCore.Models.Enums;
-using RepetitionCore.Models;
+﻿using Mapster;
 using Microsoft.EntityFrameworkCore;
-using Mapster;
+using RepetitionCore.Models;
+using RepetitionCore.Models.Enums;
+using RepetitionInfrastructure.ErrorHandling.CustomExceptions;
 
 namespace RepetitionInfrastructure.Services
 {
@@ -23,27 +24,27 @@ namespace RepetitionInfrastructure.Services
 
             return order.Adapt<OrderDto>();
         }
-        public async Task<OrderDtoCreate> CreateOrderAsync(string userId, int basketId)
+        public async Task<OrderDtoCreate> CreateOrderAsync(string userName)
         {
-            var basket = _dbContext.Baskets.FirstOrDefault(i => i.Id == basketId);
-
-            if (basket == null)
-            {
-                throw new Exception("Basket is not found");
-            }
-
-            var user = _dbContext.Users.FirstOrDefault(i => i.Id == userId);
+            var user = _dbContext.Users.FirstOrDefault(i => i.UserName == userName);
 
             if (user == null)
             {
                 throw new Exception("User is not found");
             }
 
-            var basketItems = _dbContext.BasketItems.Where(i => i.BasketId == basketId);
+            var basket = _dbContext.Baskets.FirstOrDefault(i => i.ApplicationUserId == user.Id);
+
+            if (basket == null)
+            {
+                throw new Exception("Unexpeted error, no basket binded to user found");
+            }
+
+            var basketItems = _dbContext.BasketItems.Where(i => i.BasketId == basket.Id);
 
             if (!basketItems.Any())
             {
-                throw new Exception("Unable to create empty oreder");
+                throw new Exception("Unable to create an empty oreder");
             }
 
             var order = new Order()
@@ -54,36 +55,63 @@ namespace RepetitionInfrastructure.Services
                 State = OrderState.Prepearing,
             };
 
-            return null; //!!!
-        }
-        /*public async Task<OrderDtoUpdateState> UpdateOrderStateAsync(OrderDtoUpdateState bookDtoUpdate)
-        {
+            await _dbContext.Orders.AddAsync(order);
+            await _dbContext.SaveChangesAsync();
 
-        }*/
-        public async Task<OrderDto> UpdateOrderAsync(OrderDtoUpdate orderDtoUpdate)
+            return order.Adapt<OrderDtoCreate>();
+
+        }
+        public string UpdateOrderState(OrderDtoUpdateState bookDtoUpdate)
         {
-            Order? order = _dbContext.Orders.Include(i => i.Items).FirstOrDefault(i => i.Id == orderDtoUpdate.OrderId);
+            var order = _dbContext.Orders.FirstOrDefault(i => i.Id == bookDtoUpdate.OrderId);
 
             if (order == null)
             {
-                throw new Exception("No such order found");
+                throw new ItemNotFoundException();
             }
 
-            if (order.State != OrderState.InQueue)
-            {
-                throw new InvalidOperationException("Order already is on the way");
-            }
+            var oldState = order.State;
 
-            // Implement Counting in storage
+            OrderState state = new() { };
 
-            OrderItem? orderItem = order.Items.FirstOrDefault(i => i.Id == orderDtoUpdate.OrderItemid);
-            orderItem.Amount = orderDtoUpdate.Amount;
+            OrderState[] Arr = (OrderState[])Enum.GetValues(state.GetType());
+            int j = Array.IndexOf<OrderState>(Arr, state) + 1;
+            order.State = (Arr.Length == j) ? Arr[0] : Arr[j];
 
-            return null; //!!!!!
+            return $"State is changed from {oldState} to {order.State}";
         }
-        public async Task<bool> DeleteOrderAsync(int id)
+        //public orderdto updateorder(orderdtoupdate orderdtoupdate)
+        //{
+        //    order? order = _dbcontext.orders.include(i => i.items).firstordefault(i => i.id == orderdtoupdate.orderid);
+
+        //    if (order == null)
+        //    {
+        //        throw new exception("no such order found");
+        //    }
+
+        //    if (order.state != orderstate.inqueue)
+        //    {
+        //        throw new invalidoperationexception("order already is on the way");
+        //    }
+
+        // Count in storage
+
+        //    orderitem? orderitem = order.items.firstordefault(i => i.id == orderdtoupdate.orderitemid);
+        //    orderitem.amount = orderdtoupdate.amount;
+
+        //    return null; //!!!!!
+        //}
+        public bool DeleteOrder(int id)
         {
-            return false; //!!!
+            var order = _dbContext.Orders.FirstOrDefault(i => i.Id == id);
+
+            if (order == null)
+            {
+                throw new ItemNotFoundException("No such order");
+            }
+
+            _dbContext.Orders.Remove(order);
+            return true;
         }
     }
 }

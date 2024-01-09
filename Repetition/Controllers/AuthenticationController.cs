@@ -27,6 +27,8 @@ namespace Repetition.Controllers
                     return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User already exists!" });
                 case "CreationFailed":
                     return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
+                default:
+                    break;
             }
             return Ok(new Response { Status = "Success", Message = "User created successfully!" });
         }
@@ -43,6 +45,8 @@ namespace Repetition.Controllers
                     return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User already exists!" });
                 case "CreationFailed":
                     return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
+                default:
+                    break;
             }
             return Ok(new Response { Status = "Success", Message = "User created successfully!" });
         }
@@ -57,6 +61,8 @@ namespace Repetition.Controllers
             {
                 case "Unauthorized":
                     return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
+                default:
+                    break;
             }
 
             return Ok(registerAdmin);

@@ -77,8 +77,8 @@ namespace Repetition.Extentions
                             Id = "Bearer"
                         }
                     },
-                    new string[] {}
-                        
+                    Array.Empty<string>()
+
                 }});
             });
         }
